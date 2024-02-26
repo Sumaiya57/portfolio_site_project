@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel = "stylesheet" href="style.css">
+</head>
+<body>
+   <div id="header">
+    <div class="container">
+         <nav>
+            <img src="images/logo.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">about</a></li>
+                <!---<li><a href="#services">services</a></li>---> 
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul> 
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+         </nav>
+        <div class="header-text">
+            <p>Web designer</p>
+            <h1>Assalamu alaikum,I'm <span>Sumaiya </span><br>Kamal from Bangladesh...</h1>
+        </div>
+    <!-------about------->
+    </div>
+   </div> 
+   <div id="about">
+     <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/background.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About me</h1>
+                <p>I am a good listener and learner, able to communicate well with a group and on an individual level.
+                     I am able to motivate and direct my talents and skills to meet objectives. I always seek to achieve a high standard in whatever work I undertake. 
+                     I am well organised with a clear and positive approach to problem solving.</p>
+                     <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Projects</p>
+                        <p class="tab-links" onclick="opentab('Educations')">Educations</p>
+                        <p class="tab-links" onclick="opentab('Interested')">Interested</p>
+                     </div>
+                     <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><a href="https://github.com/Mridul-1005/Asteroid-Shooter-Game-/tree/main/Asteroid%20Shooter%20Game"><span>Asteroid-Shooter-Game-</span></a></li>
+                            <li><a href="https://github.com/Sumaiya57/Puzzle-Game"><span>Puzzle-Game-</span></a></li>
+                            <li><a href="https://github.com/Sumaiya57/javacalc"><span>Calculator</span></a></li>
+                        </ul>
+                     </div>
+                     <div class="tab-contents" id="Educations">
+                        <ul>
+                            <li>2021-Current<br><span>Shahjalal Univrsity of Science and Technology</span></li>
+                            <li>2018-2020<br><span>Chittagong City College</span></li>
+                            <li>2019<br><span>Rahmania High School</span></li>
+                            
+                        </ul>
+                     </div>
+                     <div class="tab-contents" id="Interested">
+                        <ul>
+                            <li><span>Reading Books</span></li>
+                            <li><span>Explore new things</span></li>
+                            <li><span>Traveling</span></li>
+                        </ul>
+                     </div>
+            </div>
+        </div>
+     </div>
+   </div>
+   <div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My work</h1>
+         <div class="work-list">
+            <div class="work">
+                <img src="images/work-1.png">
+                <div class="layer">
+                    <h3>Calculator</h3>
+                    <p>This helps to be calculated</p>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-2.png">
+                <h3>Puzzle game</h3>
+                <p>this is a interesting game;</p>
+            </div>
+            <div class="work">
+                <img src="images/work-3.png">
+                <h3>Shooter game</h3>
+                <p>this is also interesting game;</p>
+            </div>
+        </div>
+    </div>
+   </div>
+   <div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                  <h1 class="sub-title">Contact Me</h1>
+                  <p><i class="fa-duotone fa-paper-plane-top"></i>contact@example.com</p>
+                  <p><i class="fa-solid fa-phone"></i>01879031018</p>
+                  <div class="social-icons">
+                    <a href="https://facebook.com/">sign in facebook</a><br><br>
+                    <a href="https://instagram.com/"><i class="bi bi-instagram">sign in instagram</i></a><br><br>
+                    
+                    <a href="https://linkedin.com/"><i class="bi bi-linkedin">sign in linkedin</i></a><br>
+                  </div><br>
+                  <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright sumaiya. </p>
+        </div>
+    </div>
+
+   </div>
+  
+   <script>
+    var tablinks= document.getElementsByClassName("tab-links");
+    var tabcontents= document.getElementsByClassName("tab-contents");
+    //var tablinks= document.getElementsByClassName("tab-links");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }</script>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right="0";
+
+        }
+        function closemenu(){
+            sidemenu.style.right="-200px";     
+        }
+        </script>
+
+    <script>
+    const scriptURL = '<https://script.google.com/macros/s/AKfycbxXAHqiUGQzL3NgGSGbWZoQmVMjeVITkeE7QXg0dYpnbZlTTUUFui9W9kyYiHWhEISj8g/exec>'
+    const form = document.forms['submit-to-google-sheet']
+    const msg= document.getElementById("msg")
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+               msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+  <script>
+  const scriptURL: 'https://script.google.com/macros/s/AKfycbx_CWeHJ6sXmd9vJeskdcJERedas-sFD6bPBt4GhQ91l-hU7EbLU0p5VrSfTiNbgRel/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
